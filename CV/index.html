@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lewis Hung - Visual CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #5c6b5d; /* Sage Green - Nature/Grounding */
+            --secondary: #e8e6e1; /* Off-white/Paper - Warmth */
+            --accent: #d4a373; /* Muted Gold - High value/Aesthetics */
+            --text: #2f3e30; /* Dark Green - Readability */
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--secondary);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modal Styles */
+        #contactModal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #contactModal.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #contactModal:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body class="min-h-screen pb-10">
+
+    <!-- Sticky Header -->
+    <nav class="fixed top-0 w-full z-50 bg-[#e8e6e1]/90 backdrop-blur-sm border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+        <span class="serif text-xl font-semibold tracking-wide text-[#5c6b5d]">Lewis.</span>
+        <button onclick="toggleModal(true)" class="bg-[#5c6b5d] text-white px-4 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase hover:bg-[#4a574b] transition-colors">
+            Contact
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-28 px-6 mb-10 fade-in-up">
+        <!-- 
+            Enlarged container from w-32 h-32 to w-48 h-48.
+            Kept the zoom effect on the image.
+        -->
+        <div class="w-48 h-48 rounded-full bg-gray-300 mb-6 overflow-hidden border-2 border-[#5c6b5d] mx-auto shadow-lg relative">
+             <img 
+                src="WhatsApp Image 2025-12-03 at 14.02.42 (2).jpeg" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=300&auto=format&fit=crop';"
+                alt="Lewis Hung" 
+                class="w-full h-full object-cover opacity-95" 
+                style="object-position: center 20%; transform: scale(1.6);"
+            >
+        </div>
+        
+        <h1 class="text-4xl text-center leading-tight mb-2 text-[#2f3e30]">
+            Lewis Hung
+        </h1>
+        <p class="text-center text-[#5c6b5d] text-sm tracking-widest uppercase mb-6 font-medium">
+            Storyteller • Digital Creator • Guide
+        </p>
+
+        <div class="glass-card p-6 text-center shadow-sm">
+            <h2 class="serif text-2xl italic mb-3 text-[#5c6b5d]">For The Nourish School</h2>
+            <p class="text-sm leading-relaxed opacity-90">
+                I translate the energy of awakening into visuals that grow communities. I combine a deep personal practice with professional editing to create content that resonates and converts.
+            </p>
+        </div>
+    </header>
+
+    <!-- Social Media Impact - Proven Results -->
+    <section class="px-6 mb-12 fade-in-up delay-100">
+        <div class="flex items-center gap-2 mb-4 opacity-60">
+            <i data-lucide="trending-up" class="w-4 h-4"></i>
+            <span class="text-xs uppercase tracking-widest font-semibold">Proven Impact (Real Data)</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card p-4 text-center">
+                 <h3 class="serif text-lg text-[#5c6b5d] mb-1">Wildmate Story</h3>
+                 <p class="text-2xl font-bold text-[#2f3e30]">+154%</p>
+                 <p class="text-[10px] uppercase tracking-wider opacity-70">Accounts Reached (30 Days)</p>
+                 <div class="mt-2 pt-2 border-t border-[#5c6b5d]/20">
+                    <p class="text-lg font-bold text-[#2f3e30]">+15.7%</p>
+                    <p class="text-[10px] uppercase tracking-wider opacity-70">Engagement Rate</p>
+                 </div>
+            </div>
+            <div class="glass-card p-4 text-center">
+                 <h3 class="serif text-lg text-[#5c6b5d] mb-1">Nicky Sir Watch</h3>
+                 <p class="text-2xl font-bold text-[#2f3e30]">10.3K</p>
+                 <p class="text-[10px] uppercase tracking-wider opacity-70">Views (Last 28 Days)</p>
+                 <div class="mt-2 pt-2 border-t border-[#5c6b5d]/20">
+                    <p class="text-lg font-bold text-[#2f3e30]">+26</p>
+                    <p class="text-[10px] uppercase tracking-wider opacity-70">New Subscribers</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Visual Portfolio / Experience - Interactive Links -->
+    <section class="px-6 mb-12 space-y-8">
+        <div class="flex items-center gap-2 mb-4 opacity-60">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span class="text-xs uppercase tracking-widest font-semibold">My Journey & Portfolios</span>
+        </div>
+
+        <!-- Card 1: Wildmate (The Spiritual Match) -->
+        <!-- IMAGE: Linked to '14.18.24.jpeg' (The Group Photo) -->
+        <a href="https://www.instagram.com/wildmatestory.hk/" target="_blank" class="block fade-in-up delay-200 relative rounded-2xl overflow-hidden h-72 shadow-md group cursor-pointer transition-transform active:scale-95">
+            <img 
+                src="WhatsApp Image 2025-12-03 at 14.18.24.jpeg" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop';"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                alt="Wildmate Community" 
+                style="object-position: center;"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#2f3e30] via-[#2f3e30]/60 to-transparent opacity-90"></div>
+            
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i data-lucide="mountain" class="w-4 h-4 text-[#d4a373]"></i>
+                    <span class="text-xs font-medium text-[#d4a373] uppercase tracking-wider">Co-Founder</span>
+                </div>
+                <h3 class="serif text-3xl mb-2">Wildmate Story HK</h3>
+                <p class="text-sm text-gray-200 line-clamp-2 mb-4">
+                    Built an outdoor community rooted in connection. I understand the "Awakening" demographic because I am part of it.
+                </p>
+                <span class="inline-flex items-center gap-1 bg-[#d4a373] text-[#2f3e30] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                    View Portfolio <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                </span>
+            </div>
+        </a>
+
+        <!-- Card 2: Nicky Sir (The Technical/Storytelling Proof) -->
+        <!-- IMAGE: Linked to '14.02.38.jpeg' (You with Watches) -->
+        <a href="https://youtube.com/@nickysir" target="_blank" class="block fade-in-up delay-300 relative rounded-2xl overflow-hidden h-72 shadow-md group cursor-pointer transition-transform active:scale-95">
+            <img 
+                src="WhatsApp Image 2025-12-03 at 14.02.38.jpeg" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596561138241-119c80d5dd0e?q=80&w=800&auto=format&fit=crop';"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                alt="Watch Repair" 
+                style="object-position: center bottom;"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#2f3e30] via-[#2f3e30]/60 to-transparent opacity-90"></div>
+            
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+                <div class="flex items-center gap-2 mb-1">
+                    <i data-lucide="youtube" class="w-4 h-4 text-[#d4a373]"></i>
+                    <span class="text-xs font-medium text-[#d4a373] uppercase tracking-wider">Content Lead</span>
+                </div>
+                <h3 class="serif text-3xl mb-2">Nicky Sir Watch Repair</h3>
+                <p class="text-sm text-gray-200 line-clamp-2 mb-4">
+                    Translated niche technical skills into human stories. Grew a loyal community of 1,000+ hobbyists through empathy-driven content.
+                </p>
+                 <span class="inline-flex items-center gap-1 bg-[#d4a373] text-[#2f3e30] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                    View Channel <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                </span>
+            </div>
+        </a>
+    </section>
+
+    <!-- The Aesthetic Edge - Reprioritized -->
+    <section class="px-6 mb-16 fade-in-up delay-300">
+         <div class="glass-card p-8 border-l-4 border-[#5c6b5d]">
+            <h3 class="serif text-2xl mb-4 text-[#2f3e30]">The Aesthetic Edge</h3>
+            <p class="text-sm mb-6 text-gray-600">
+                I use professional editing tools to create high-quality, engaging content. AI is a supportive tool I use to enhance visuals and narratives when needed.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4">
+                 <!-- Tool 1: Primary Editing -->
+                <div class="bg-white/50 p-4 rounded-xl text-center">
+                    <div class="bg-[#e8e6e1] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 text-[#5c6b5d]">
+                        <i data-lucide="scissors" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-sm">Video Editing</h4>
+                    <p class="text-[10px] text-gray-500 uppercase mt-1">CapCut & Premiere Pro</p>
+                </div>
+                <!-- Tool 2: Design -->
+                <div class="bg-white/50 p-4 rounded-xl text-center">
+                    <div class="bg-[#e8e6e1] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 text-[#5c6b5d]">
+                        <i data-lucide="layout-template" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-sm">Graphic Design</h4>
+                    <p class="text-[10px] text-gray-500 uppercase mt-1">Canva Expert</p>
+                </div>
+                <!-- Tool 3: AI Visuals (Support) -->
+                <div class="bg-white/50 p-4 rounded-xl text-center opacity-75">
+                    <div class="bg-[#e8e6e1] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 text-[#5c6b5d]">
+                        <i data-lucide="image" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-sm">AI Visuals (Support)</h4>
+                    <p class="text-[10px] text-gray-500 uppercase mt-1">Midjourney & Veo</p>
+                </div>
+                 <!-- Tool 4: AI Narrative (Support) -->
+                <div class="bg-white/50 p-4 rounded-xl text-center opacity-75">
+                    <div class="bg-[#e8e6e1] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2 text-[#5c6b5d]">
+                        <i data-lucide="bot" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-sm">AI Narrative (Support)</h4>
+                    <p class="text-[10px] text-gray-500 uppercase mt-1">Gemini LLM</p>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <!-- Footer / Contact Info -->
+    <footer class="px-6 pb-12 fade-in-up delay-300">
+        <h2 class="serif text-3xl mb-6 text-center text-[#2f3e30]">Get in Touch</h2>
+        
+        <div class="text-center">
+             <button onclick="toggleModal(true)" class="bg-[#5c6b5d] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#4a574b] transition-colors uppercase tracking-wider text-sm transform active:scale-95">
+                Contact Me
+            </button>
+        </div>
+        
+        <div class="text-[10px] text-center text-gray-400 mt-8 uppercase tracking-widest">
+            Hong Kong • Remote Ready
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[60] flex items-center justify-center px-4 hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="toggleModal(false)"></div>
+        
+        <!-- Modal Content -->
+        <div class="bg-[#e8e6e1] rounded-2xl w-full max-w-sm p-6 relative shadow-2xl transform transition-all scale-100">
+            <button onclick="toggleModal(false)" class="absolute top-4 right-4 text-gray-500 hover:text-black">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <h3 class="serif text-2xl mb-6 text-[#2f3e30] text-center">Contact Info</h3>
+
+            <div class="space-y-4">
+                <!-- Phone -->
+                <div class="bg-white/60 p-3 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-[#5c6b5d]/10 p-2 rounded-full text-[#5c6b5d]">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-medium text-[#2f3e30]">(+852) 9882 3120</span>
+                    </div>
+                    <button onclick="copyToClipboard('(+852) 9882 3120')" class="text-[#5c6b5d] hover:bg-[#5c6b5d]/10 p-1.5 rounded-lg transition-colors">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Instagram -->
+                <div class="bg-white/60 p-3 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-[#5c6b5d]/10 p-2 rounded-full text-[#5c6b5d]">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-medium text-[#2f3e30]">@underdooooog</span>
+                    </div>
+                    <button onclick="copyToClipboard('@underdooooog')" class="text-[#5c6b5d] hover:bg-[#5c6b5d]/10 p-1.5 rounded-lg transition-colors">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                 <!-- Email -->
+                 <div class="bg-white/60 p-3 rounded-xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-[#5c6b5d]/10 p-2 rounded-full text-[#5c6b5d]">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-medium text-[#2f3e30] truncate max-w-[140px]">lewishung0212@gmail.com</span>
+                    </div>
+                    <button onclick="copyToClipboard('lewishung0212@gmail.com')" class="text-[#5c6b5d] hover:bg-[#5c6b5d]/10 p-1.5 rounded-lg transition-colors">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+            
+             <p class="text-[10px] text-center text-gray-400 mt-6">Click icon to copy</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-[#2f3e30] text-white px-6 py-3 rounded-full text-sm opacity-0 transition-opacity duration-300 pointer-events-none z-[70] shadow-lg flex items-center gap-2">
+        <i data-lucide="check-circle" class="w-4 h-4 text-[#d4a373]"></i>
+        <span>Copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        function toggleModal(show) {
+            const modal = document.getElementById('contactModal');
+            if (show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0');
+                toast.classList.add('opacity-100');
+                
+                // Haptic feedback if available
+                if (window.navigator && window.navigator.vibrate) {
+                    window.navigator.vibrate(50);
+                }
+
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100');
+                    toast.classList.add('opacity-0');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
